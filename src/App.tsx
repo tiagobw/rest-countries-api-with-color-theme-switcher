@@ -35,6 +35,8 @@ function App() {
       <Form />
       {state.loading ? (
         <p>Loading...</p>
+      ) : state.errorMessage ? (
+        <p>{state.errorMessage}</p>
       ) : (
         state.countries.map((country) => (
           <p key={country.name.common}>{country.name.common}</p>

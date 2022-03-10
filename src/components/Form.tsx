@@ -38,6 +38,12 @@ const Form = () => {
       });
       console.log(state.countries);
     } catch (error) {
+      dispatch({
+        type: CountriesActionTypes.Error,
+        payload: {
+          errorMessage: "Couldn't fetch Countries...",
+        },
+      });
       console.error(error);
     }
   };
