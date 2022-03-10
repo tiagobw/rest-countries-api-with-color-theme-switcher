@@ -9,26 +9,26 @@ import Form from './components/Form';
 function App() {
   const { state, dispatch } = useCountriesContext();
 
-  useEffect(() => {
-    const fetchCountries = async () => {
-      try {
-        const country = new Country();
-        dispatch({
-          type: CountriesActionTypes.Loading,
-        });
-        await country.fetch(new AxiosCountriesFetcher(), '/region/americas');
-        dispatch({
-          type: CountriesActionTypes.Fetch,
-          payload: { countries: country.getList(8) },
-        });
-        console.log(state.countries);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchCountries = async () => {
+  //     try {
+  //       const country = new Country();
+  //       dispatch({
+  //         type: CountriesActionTypes.Loading,
+  //       });
+  //       await country.fetch(new AxiosCountriesFetcher(), '/region/americas');
+  //       dispatch({
+  //         type: CountriesActionTypes.Fetch,
+  //         payload: { countries: country.getList(8) },
+  //       });
+  //       console.log(state.countries);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
 
-    fetchCountries();
-  }, []);
+  //   fetchCountries();
+  // }, []);
 
   return (
     <main className='px-6 bg-very-light-gray-background'>
