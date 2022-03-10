@@ -7,14 +7,16 @@ import { CountriesActionTypes } from '../countries/types/countriesTypes';
 import { debounce } from 'lodash';
 
 const Form = () => {
+  const [country, setCountry] = useState('');
   const [region, setRegion] = useState('');
   const { state, dispatch } = useCountriesContext();
 
   const debouncedFetchAndSetCountry = useRef(
     debounce(async (countryToFetch: string) => {
       console.log('countryToFetch:', countryToFetch);
+      setCountry('');
       await fetchCountries(`/name/${countryToFetch}`, 8);
-    }, 300),
+    }, 600),
   ).current;
 
   useEffect(() => {
@@ -49,6 +51,7 @@ const Form = () => {
   };
 
   const handleInputChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCountry(e.target.value);
     debouncedFetchAndSetCountry(e.target.value);
   };
 
@@ -66,6 +69,7 @@ const Form = () => {
         <AiOutlineSearch className='text-xl text-dark-gray-input absolute ml-8 left-0 top-1/2 -translate-y-1/2' />
         <input
           onChange={handleInputChange}
+          value={country}
           className='pl-20 py-4 rounded-md w-full shadow-md focus:outline-none placeholder:text-dark-gray-input'
           placeholder='Search for a country...'
           type='text'
