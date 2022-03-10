@@ -5,6 +5,7 @@ import { Country } from './countries/model/Country';
 import { AxiosCountriesFetcher } from './countries/axios/countriesApiCalls';
 import { CountriesActionTypes } from './countries/types/countriesTypes';
 import Form from './components/Form';
+import Card from './components/Card';
 
 function App() {
   const { state, dispatch } = useCountriesContext();
@@ -38,9 +39,7 @@ function App() {
       ) : state.errorMessage ? (
         <p>{state.errorMessage}</p>
       ) : (
-        state.countries.map((country) => (
-          <p key={country.name.common}>{country.name.common}</p>
-        ))
+        <Card />
       )}
     </main>
   );
