@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useCountriesContext } from './countries/context/useCountriesContext';
+import { useCountriesContext } from './countries/hooks/useCountriesContext';
 import { Country } from './countries/model/Country';
 import { AxiosCountriesFetcher } from './countries/axios/countriesApiCalls';
 import { CountriesActionTypes } from './countries/types/countriesTypes';
