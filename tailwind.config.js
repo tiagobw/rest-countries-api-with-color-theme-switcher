@@ -1,7 +1,11 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'down-arrow': 'url(/src/images/down-arrow.svg)',
+      },
+    },
     colors: {
       'dark-blue': 'hsl(209, 23%, 22%)',
       'very-dark-blue-background': 'hsl(207, 26%, 17%)',
