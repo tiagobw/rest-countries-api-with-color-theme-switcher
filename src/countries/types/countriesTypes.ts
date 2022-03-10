@@ -33,11 +33,14 @@ export interface CountriesFetcher {
 export type CountriesState = {
   countries: CountryType[];
   loading: boolean;
+  errorMessage: string;
 };
 
 export enum CountriesActionTypes {
   Fetch = 'FETCH_COUNTRIES',
+  Error = 'ERROR',
   Loading = 'LOADING',
+  StopLoading = 'STOP_LOADING',
 }
 
 export type CountriesActions =
@@ -48,5 +51,14 @@ export type CountriesActions =
       };
     }
   | {
+      type: CountriesActionTypes.Error;
+      payload: {
+        errorMessage: string;
+      };
+    }
+  | {
       type: CountriesActionTypes.Loading;
+    }
+  | {
+      type: CountriesActionTypes.StopLoading;
     };

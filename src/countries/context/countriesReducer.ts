@@ -14,11 +14,25 @@ export const countriesReducer = (
         ...state,
         countries: action.payload.countries,
         loading: false,
+        errorMessage: '',
       };
     case CountriesActionTypes.Loading:
       return {
         ...state,
         loading: true,
+        errorMessage: '',
+      };
+    case CountriesActionTypes.StopLoading:
+      return {
+        ...state,
+        loading: false,
+        errorMessage: '',
+      };
+    case CountriesActionTypes.Error:
+      return {
+        ...state,
+        loading: false,
+        errorMessage: action.payload.errorMessage,
       };
     default:
       return state;
