@@ -45,7 +45,6 @@ export type CountriesActions =
       type: CountriesActionTypes.Fetch;
       payload: {
         countries: CountryType[];
-        loading: boolean;
       };
     }
   | {

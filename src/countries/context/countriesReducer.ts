@@ -13,7 +13,7 @@ export const countriesReducer = (
       return {
         ...state,
         countries: action.payload.countries,
-        loading: action.payload.loading,
+        loading: false,
       };
     case CountriesActionTypes.Loading:
       return {

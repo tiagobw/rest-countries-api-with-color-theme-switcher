@@ -19,7 +19,7 @@ function App() {
         await country.fetch(new AxiosCountriesFetcher(), '/region/americas');
         dispatch({
           type: CountriesActionTypes.Fetch,
-          payload: { countries: country.getList(8), loading: false },
+          payload: { countries: country.getList(8) },
         });
         console.log(state.countries);
       } catch (error) {

@@ -25,7 +25,6 @@ const Form = () => {
             type: CountriesActionTypes.Fetch,
             payload: {
               countries: country.getList(8),
-              loading: false,
             },
           });
           console.log(state.countries);
