@@ -10,7 +10,16 @@ export const countriesReducer = (
 ) => {
   switch (action.type) {
     case CountriesActionTypes.Fetch:
-      return { ...state, countries: action.payload };
+      return {
+        ...state,
+        countries: action.payload.countries,
+        loading: action.payload.loading,
+      };
+    case CountriesActionTypes.Loading:
+      return {
+        ...state,
+        loading: true,
+      };
     default:
       return state;
   }

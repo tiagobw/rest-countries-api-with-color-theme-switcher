@@ -5,6 +5,7 @@ import { CountriesActions, CountriesState } from '../types/countriesTypes';
 
 const initialState: CountriesState = {
   countries: [],
+  loading: false,
 };
 
 const CountriesContext = createContext<{

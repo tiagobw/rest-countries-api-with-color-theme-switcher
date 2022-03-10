@@ -32,13 +32,22 @@ export interface CountriesFetcher {
 
 export type CountriesState = {
   countries: CountryType[];
+  loading: boolean;
 };
 
 export enum CountriesActionTypes {
   Fetch = 'FETCH_COUNTRIES',
+  Loading = 'LOADING',
 }
 
-export type CountriesActions = {
-  type: CountriesActionTypes.Fetch;
-  payload: CountryType[];
-};
+export type CountriesActions =
+  | {
+      type: CountriesActionTypes.Fetch;
+      payload: {
+        countries: CountryType[];
+        loading: boolean;
+      };
+    }
+  | {
+      type: CountriesActionTypes.Loading;
+    };
