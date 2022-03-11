@@ -3,6 +3,7 @@ import { Country } from '../countries/model/Country';
 import { AxiosCountriesFetcher } from '../countries/axios/countriesApiCalls';
 import { SelectedCountryType } from '../countries/types/countriesTypes';
 import { useEffect, useState } from 'react';
+import { DataConverter } from '../countries/utils/DataConverter';
 
 const Detail = () => {
   const [selectedCountry, setSelectCountry] = useState<SelectedCountryType>();
@@ -16,10 +17,9 @@ const Detail = () => {
     }
 
     const getSelectedCountry = async () => {
-      const fetchedSelectedCountry = await new Country().getSelected(
-        state.countries[0],
-        new AxiosCountriesFetcher(),
-      );
+      const fetchedSelectedCountry = await new Country(
+        new DataConverter(),
+      ).getSelected(state.countries[0], new AxiosCountriesFetcher());
 
       console.log(fetchedSelectedCountry.borders);
 

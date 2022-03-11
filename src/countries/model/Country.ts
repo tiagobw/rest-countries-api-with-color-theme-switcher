@@ -1,4 +1,5 @@
 import {
+  CountriesDataConverter,
   CountriesFetcher,
   CountryType,
   SelectedCountryType,
@@ -7,9 +8,11 @@ import {
 export class Country {
   private list: CountryType[];
   private selected: SelectedCountryType = {} as SelectedCountryType;
+  private dataConverter: CountriesDataConverter;
 
-  constructor() {
+  constructor(dataConverter: CountriesDataConverter) {
     this.list = [];
+    this.dataConverter = dataConverter;
   }
 
   async fetch(countriesFetcher: CountriesFetcher, url: string) {
@@ -63,17 +66,7 @@ export class Country {
       common: string;
     };
   }): string[] {
-    const nativeNameArray = [];
-
-    for (const n in nativeName) {
-      nativeNameArray.push(nativeName[n].common);
-    }
-
-    nativeNameArray.map((n, index) =>
-      index < nativeNameArray.length - 1 ? `${n}, ` : n,
-    );
-
-    return nativeNameArray;
+    return this.dataConverter.getNativeNameArray(nativeName);
   }
 
   getCurrenciesArray = (currencies: {
@@ -82,42 +75,20 @@ export class Country {
       symbol: string;
     };
   }): string[] => {
-    const currenciesArray = [];
-
-    for (const currency in currencies) {
-      currenciesArray.push(currencies[currency].name);
-    }
-
-    currenciesArray.map((currency, index) =>
-      index < currenciesArray.length - 1 ? `${currency}, ` : currency,
-    );
-
-    return currenciesArray;
+    return this.dataConverter.getCurrenciesArray(currencies);
   };
 
   getLanguagesArray = (languages: { [key: string]: string }): string[] => {
-    const languagesArray = [];
-
-    for (const language in languages) {
-      languagesArray.push(languages[language]);
-    }
-
-    languagesArray.map((language, index) =>
-      index < languagesArray.length - 1 ? `${language}, ` : language,
-    );
-
-    return languagesArray;
+    return this.dataConverter.getLanguagesArray(languages);
   };
 
   async getBorderCountries(
     borders: string[],
     countriesFetcher: CountriesFetcher,
   ): Promise<CountryType[]> {
-    const bordersCsv = borders.toString();
-    const borderCountries = await countriesFetcher.fetch(
-      `/alpha?codes=${bordersCsv}`,
+    return await this.dataConverter.getBorderCountries(
+      borders,
+      countriesFetcher,
     );
-
-    return borderCountries;
   }
 }

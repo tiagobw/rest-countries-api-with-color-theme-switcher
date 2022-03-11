@@ -54,6 +54,29 @@ export interface CountriesFetcher {
   fetch: (url: string) => Promise<CountryType[]>;
 }
 
+export interface CountriesDataConverter {
+  getNativeNameArray: (nativeName: {
+    [key: string]: {
+      official: string;
+      common: string;
+    };
+  }) => string[];
+
+  getCurrenciesArray: (currencies: {
+    [key: string]: {
+      name: string;
+      symbol: string;
+    };
+  }) => string[];
+
+  getLanguagesArray: (languages: { [key: string]: string }) => string[];
+
+  getBorderCountries: (
+    borders: string[],
+    countriesFetcher: CountriesFetcher,
+  ) => Promise<CountryType[]>;
+}
+
 export type CountriesState = {
   countries: CountryType[];
   loading: boolean;

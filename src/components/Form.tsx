@@ -5,6 +5,7 @@ import { useCountriesContext } from '../countries/hooks/useCountriesContext';
 import { Country } from '../countries/model/Country';
 import { CountriesActionTypes } from '../countries/types/countriesTypes';
 import { debounce } from 'lodash';
+import { DataConverter } from '../countries/utils/DataConverter';
 
 const Form = () => {
   const [country, setCountry] = useState('');
@@ -27,7 +28,7 @@ const Form = () => {
 
   const fetchCountries = async (url: string, numberOfCountries: number) => {
     try {
-      const country = new Country();
+      const country = new Country(new DataConverter());
       dispatch({
         type: CountriesActionTypes.Loading,
       });

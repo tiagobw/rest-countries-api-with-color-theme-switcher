@@ -1,31 +1,26 @@
-import { useCountriesContext } from '../countries/hooks/useCountriesContext';
+import { CountryType } from '../countries/types/countriesTypes';
 
-const Card = () => {
-  const { state } = useCountriesContext();
+type CardProps = {
+  country: CountryType;
+};
 
-  if (state.countries.length === 0) {
-    return <p>There is no Country...</p>;
-  }
-
-  const { countries } = state;
-
-  const { name, population, region, capital } = countries && countries[0];
+const Card = ({ country }: CardProps) => {
+  const { flags, name, population, region, capital } = country;
 
   return (
-    countries && (
-      <article>
-        <h1>{name.common}</h1>
-        <p>
-          <span>Population:</span> {population.toLocaleString()}
-        </p>
-        <p>
-          <span>Region:</span> {region}
-        </p>
-        <p>
-          <span>Capital:</span> {capital[0]}
-        </p>
-      </article>
-    )
+    <article>
+      <img src={flags.svg} alt={`${name} flag`} />
+      <h1>{name.common}</h1>
+      <p>
+        <span>Population:</span> {population.toLocaleString()}
+      </p>
+      <p>
+        <span>Region:</span> {region}
+      </p>
+      <p>
+        <span>Capital:</span> {capital[0]}
+      </p>
+    </article>
   );
 };
 

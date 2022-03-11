@@ -9,28 +9,7 @@ import Card from './components/Card';
 import Detail from './components/Detail';
 
 function App() {
-  const { state, dispatch } = useCountriesContext();
-
-  // useEffect(() => {
-  //   const fetchCountries = async () => {
-  //     try {
-  //       const country = new Country();
-  //       dispatch({
-  //         type: CountriesActionTypes.Loading,
-  //       });
-  //       await country.fetch(new AxiosCountriesFetcher(), '/region/americas');
-  //       dispatch({
-  //         type: CountriesActionTypes.Fetch,
-  //         payload: { countries: country.getList(8) },
-  //       });
-  //       console.log(state.countries);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-
-  //   fetchCountries();
-  // }, []);
+  const { state } = useCountriesContext();
 
   return (
     <main className='px-6 bg-very-light-gray-background'>
@@ -40,8 +19,9 @@ function App() {
       ) : state.errorMessage ? (
         <p>{state.errorMessage}</p>
       ) : (
-        // <Card />
-        <Detail />
+        state.countries.map((country) => (
+          <Card key={country.tld[0]} country={country} />
+        ))
       )}
     </main>
   );
