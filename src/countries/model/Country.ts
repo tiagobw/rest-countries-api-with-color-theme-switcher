@@ -25,6 +25,7 @@ export class Country {
     countriesFetcher: CountriesFetcher,
   ): Promise<SelectedCountryType> {
     const {
+      flags,
       name: { common, official, nativeName },
       currencies,
       languages,
@@ -37,6 +38,7 @@ export class Country {
     } = country;
 
     this.selected = {
+      flags,
       name: {
         common,
         official,

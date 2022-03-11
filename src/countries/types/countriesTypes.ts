@@ -1,4 +1,8 @@
 export type CountryType = {
+  flags: {
+    png: string;
+    svg: string;
+  };
   name: {
     common: string;
     official: string;
@@ -27,6 +31,10 @@ export type CountryType = {
 };
 
 export type SelectedCountryType = {
+  flags: {
+    png: string;
+    svg: string;
+  };
   name: {
     common: string;
     official: string;
