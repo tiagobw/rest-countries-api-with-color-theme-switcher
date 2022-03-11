@@ -93,9 +93,11 @@ const Detail = ({ country }: DetailProps) => {
             <p className='text-lg mb-2'>
               <span className='font-semibold'>Sub Region:</span> {subregion}
             </p>
-            <p className='text-lg mb-12'>
-              <span className='font-semibold'>Capital:</span> {capital[0]}
-            </p>
+            {capital && capital[0] && (
+              <p className='text-lg mb-12'>
+                <span className='font-semibold'>Capital:</span> {capital[0]}
+              </p>
+            )}
             <p className='text-lg mb-2'>
               <span className='font-semibold'>Top Level Domain:</span> {tld}
             </p>

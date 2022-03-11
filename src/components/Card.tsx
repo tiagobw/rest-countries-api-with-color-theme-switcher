@@ -23,9 +23,11 @@ const Card = ({ country }: CardProps) => {
         <p className='text-lg mb-2'>
           <span className='font-semibold'>Region:</span> {region}
         </p>
-        <p className='text-lg mb-6'>
-          <span className='font-semibold'>Capital:</span> {capital[0]}
-        </p>
+        {capital && capital[0] && (
+          <p className='text-lg mb-6'>
+            <span className='font-semibold'>Capital:</span> {capital[0]}
+          </p>
+        )}
       </div>
     </article>
   );
