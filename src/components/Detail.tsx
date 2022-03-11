@@ -1,9 +1,35 @@
 import { useCountriesContext } from '../countries/hooks/useCountriesContext';
+import { Country } from '../countries/model/Country';
+import { AxiosCountriesFetcher } from '../countries/axios/countriesApiCalls';
+import { SelectedCountryType } from '../countries/types/countriesTypes';
+import { useEffect, useState } from 'react';
 
 const Detail = () => {
+  const [selectedCountry, setSelectCountry] = useState<SelectedCountryType>();
   const { state } = useCountriesContext();
 
-  if (state.countries.length === 0) {
+  useEffect(() => {
+    console.log('useEffect from Detail');
+
+    if (state.countries.length === 0) {
+      return;
+    }
+
+    const getSelectedCountry = async () => {
+      const fetchedSelectedCountry = await new Country().getSelected(
+        state.countries[0],
+        new AxiosCountriesFetcher(),
+      );
+
+      console.log(fetchedSelectedCountry.borders);
+
+      setSelectCountry(fetchedSelectedCountry);
+    };
+
+    getSelectedCountry();
+  }, [state.countries]);
+
+  if (!selectedCountry) {
     return <p>There is no Country...</p>;
   }
 
@@ -18,42 +44,16 @@ const Detail = () => {
     tld,
     currencies,
     languages,
-  } = countries && countries[0];
-
-  const getCurrencies = () => {
-    const currenciesArray = [];
-
-    for (const currency in currencies) {
-      currenciesArray.push(currencies[currency].name);
-    }
-
-    currenciesArray.map((currency, index) =>
-      index < currenciesArray.length - 1 ? `${currency}, ` : currency,
-    );
-
-    return currenciesArray;
-  };
-
-  const getLanguages = () => {
-    const languagesArray = [];
-
-    for (const language in languages) {
-      languagesArray.push(languages[language]);
-    }
-
-    languagesArray.map((language, index) =>
-      index < languagesArray.length - 1 ? `${language}, ` : language,
-    );
-
-    return languagesArray;
-  };
-
-  // console.log(Object.values(currencies)[0].name);
+    borders,
+  } = selectedCountry;
 
   return (
     countries && (
       <article>
         <h1>{name.common}</h1>
+        <p>
+          <span>Native Name:</span> {name.nativeName}
+        </p>
         <p>
           <span>Population:</span> {population.toLocaleString()}
         </p>
@@ -70,10 +70,18 @@ const Detail = () => {
           <span>Top Level Domain:</span> {tld[0]}
         </p>
         <p>
-          <span>Currencies:</span> {getCurrencies()}
+          <span>Currencies:</span> {currencies}
         </p>
         <p>
-          <span>Languages:</span> {getLanguages()}
+          <span>Languages:</span> {languages}
+        </p>
+        <p>
+          <span>Border Countries:</span>{' '}
+          {borders.map((border, index) =>
+            index < borders.length - 1
+              ? `${border.name.common}, `
+              : border.name.common,
+          )}
         </p>
       </article>
     )

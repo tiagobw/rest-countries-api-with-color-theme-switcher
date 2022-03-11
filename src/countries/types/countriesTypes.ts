@@ -26,6 +26,22 @@ export type CountryType = {
   tld: string[];
 };
 
+export type SelectedCountryType = {
+  name: {
+    common: string;
+    official: string;
+    nativeName: string[];
+  };
+  currencies: string[];
+  languages: string[];
+  borders: CountryType[];
+  population: number;
+  region: string;
+  subregion: string;
+  capital: string[];
+  tld: string[];
+};
+
 export interface CountriesFetcher {
   fetch: (url: string) => Promise<CountryType[]>;
 }
