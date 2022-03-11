@@ -6,6 +6,7 @@ import { AxiosCountriesFetcher } from './countries/axios/countriesApiCalls';
 import { CountriesActionTypes } from './countries/types/countriesTypes';
 import Form from './components/Form';
 import Card from './components/Card';
+import Detail from './components/Detail';
 
 function App() {
   const { state, dispatch } = useCountriesContext();
@@ -39,7 +40,8 @@ function App() {
       ) : state.errorMessage ? (
         <p>{state.errorMessage}</p>
       ) : (
-        <Card />
+        // <Card />
+        <Detail />
       )}
     </main>
   );
