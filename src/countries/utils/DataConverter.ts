@@ -17,11 +17,9 @@ export class DataConverter implements CountriesDataConverter {
       nativeNameArray.push(nativeName[n].common);
     }
 
-    nativeNameArray.map((n, index) =>
+    return nativeNameArray.map((n, index) =>
       index < nativeNameArray.length - 1 ? `${n}, ` : n,
     );
-
-    return nativeNameArray;
   }
 
   getCurrenciesArray = (currencies: {
@@ -36,11 +34,9 @@ export class DataConverter implements CountriesDataConverter {
       currenciesArray.push(currencies[currency].name);
     }
 
-    currenciesArray.map((currency, index) =>
+    return currenciesArray.map((currency, index) =>
       index < currenciesArray.length - 1 ? `${currency}, ` : currency,
     );
-
-    return currenciesArray;
   };
 
   getLanguagesArray = (languages: { [key: string]: string }): string[] => {
@@ -50,11 +46,9 @@ export class DataConverter implements CountriesDataConverter {
       languagesArray.push(languages[language]);
     }
 
-    languagesArray.map((language, index) =>
+    return languagesArray.map((language, index) =>
       index < languagesArray.length - 1 ? `${language}, ` : language,
     );
-
-    return languagesArray;
   };
 
   async getBorderCountries(

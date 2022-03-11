@@ -22,7 +22,7 @@ export type CountryType = {
   languages: {
     [key: string]: string;
   };
-  borders: string[];
+  borders: string[] | null;
   population: number;
   region: string;
   subregion: string;
@@ -42,7 +42,7 @@ export type SelectedCountryType = {
   };
   currencies: string[];
   languages: string[];
-  borders: CountryType[];
+  borders: CountryType[] | null;
   population: number;
   region: string;
   subregion: string;

@@ -6,6 +6,7 @@ import Form from './components/Form';
 import Card from './components/Card';
 import Detail from './components/Detail';
 import Layout from './components/Layout';
+import { Link } from 'react-router-dom';
 
 function App() {
   const { state } = useCountriesContext();
@@ -19,7 +20,13 @@ function App() {
         <p>{state.errorMessage}</p>
       ) : (
         state.countries.map((country) => (
-          <Card key={country.tld[0]} country={country} />
+          <Link
+            to={`/${country.name.common.toLowerCase()}`}
+            state={{ country }}
+            key={country.tld[0]}
+          >
+            <Card country={country} />
+          </Link>
         ))
       )}
     </Layout>

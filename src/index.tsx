@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 
 import App from './App';
 import { CountriesProvider } from './countries/context/CountriesContext';
+import CountryPage from './pages/CountryPage';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,6 +15,7 @@ ReactDOM.render(
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<App />} />
+          <Route path=':countryName' element={<CountryPage />} />
         </Routes>
       </BrowserRouter>
     </CountriesProvider>

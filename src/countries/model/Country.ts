@@ -40,6 +40,15 @@ export class Country {
       tld,
     } = country;
 
+    let borderCountries: CountryType[] | null = null;
+
+    if (borders) {
+      borderCountries = await this.getBorderCountries(
+        borders,
+        countriesFetcher,
+      );
+    }
+
     this.selected = {
       flags,
       name: {
@@ -49,7 +58,7 @@ export class Country {
       },
       currencies: this.getCurrenciesArray(currencies),
       languages: this.getLanguagesArray(languages),
-      borders: await this.getBorderCountries(borders, countriesFetcher),
+      borders: borderCountries,
       population,
       region,
       subregion,
@@ -86,9 +95,11 @@ export class Country {
     borders: string[],
     countriesFetcher: CountriesFetcher,
   ): Promise<CountryType[]> {
-    return await this.dataConverter.getBorderCountries(
+    const countries = await this.dataConverter.getBorderCountries(
       borders,
       countriesFetcher,
     );
+
+    return countries;
   }
 }

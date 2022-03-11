@@ -1,41 +1,51 @@
-import { useCountriesContext } from '../countries/hooks/useCountriesContext';
 import { Country } from '../countries/model/Country';
 import { AxiosCountriesFetcher } from '../countries/axios/countriesApiCalls';
-import { SelectedCountryType } from '../countries/types/countriesTypes';
+import {
+  CountriesActionTypes,
+  CountryType,
+  SelectedCountryType,
+} from '../countries/types/countriesTypes';
 import { useEffect, useState } from 'react';
 import { DataConverter } from '../countries/utils/DataConverter';
+import { useCountriesContext } from '../countries/hooks/useCountriesContext';
+import { Link } from 'react-router-dom';
 
-const Detail = () => {
+type DetailProps = {
+  country: CountryType;
+};
+
+const Detail = ({ country }: DetailProps) => {
   const [selectedCountry, setSelectCountry] = useState<SelectedCountryType>();
-  const { state } = useCountriesContext();
+  const { state, dispatch } = useCountriesContext();
 
   useEffect(() => {
     console.log('useEffect from Detail');
 
-    if (state.countries.length === 0) {
-      return;
-    }
-
     const getSelectedCountry = async () => {
+      dispatch({
+        type: CountriesActionTypes.Loading,
+      });
+
       const fetchedSelectedCountry = await new Country(
         new DataConverter(),
-      ).getSelected(state.countries[0], new AxiosCountriesFetcher());
+      ).getSelected(country, new AxiosCountriesFetcher());
 
-      console.log(fetchedSelectedCountry.borders);
+      dispatch({
+        type: CountriesActionTypes.StopLoading,
+      });
 
       setSelectCountry(fetchedSelectedCountry);
     };
 
     getSelectedCountry();
-  }, [state.countries]);
+  }, [country, dispatch]);
 
-  if (!selectedCountry) {
-    return <p>There is no Country...</p>;
+  if (!selectedCountry || state.loading) {
+    return <p>Loading...</p>;
   }
 
-  const { countries } = state;
-
   const {
+    flags,
     name,
     population,
     region,
@@ -48,41 +58,59 @@ const Detail = () => {
   } = selectedCountry;
 
   return (
-    countries && (
-      <article>
-        <h1>{name.common}</h1>
-        <p>
-          <span>Native Name:</span> {name.nativeName}
-        </p>
-        <p>
-          <span>Population:</span> {population.toLocaleString()}
-        </p>
-        <p>
-          <span>Region:</span> {region}
-        </p>
-        <p>
-          <span>Sub Region:</span> {subregion}
-        </p>
-        <p>
-          <span>Capital:</span> {capital[0]}
-        </p>
-        <p>
-          <span>Top Level Domain:</span> {tld[0]}
-        </p>
-        <p>
-          <span>Currencies:</span> {currencies}
-        </p>
-        <p>
-          <span>Languages:</span> {languages}
-        </p>
-        <p>
-          <span>Border Countries:</span>{' '}
-          {borders.map((border, index) =>
-            index < borders.length - 1
-              ? `${border.name.common}, `
-              : border.name.common,
-          )}
-        </p>
+    country && (
+      <article className='mt-20'>
+        <img
+          className='h-[220px] w-full object-cover rounded-lg'
+          src={flags.svg}
+          alt={`${name} flag`}
+        />
+        <div className='py-10'>
+          <h1 className='font-extrabold	text-3xl mb-6'>{name.common}</h1>
+          <p className='text-lg mb-2'>
+            <span className='font-semibold'>Native Name:</span>{' '}
+            {name.nativeName}
+          </p>
+          <p className='text-lg mb-2'>
+            <span className='font-semibold'>Population:</span>{' '}
+            {population.toLocaleString()}
+          </p>
+          <p className='text-lg mb-2'>
+            <span className='font-semibold'>Region:</span> {region}
+          </p>
+          <p className='text-lg mb-2'>
+            <span className='font-semibold'>Sub Region:</span> {subregion}
+          </p>
+          <p className='text-lg mb-12'>
+            <span className='font-semibold'>Capital:</span> {capital[0]}
+          </p>
+          <p className='text-lg mb-2'>
+            <span className='font-semibold'>Top Level Domain:</span> {tld}
+          </p>
+          <p className='text-lg mb-2'>
+            <span className='font-semibold'>Currencies:</span> {currencies}
+          </p>
+          <p className='text-lg mb-2'>
+            <span className='font-semibold'>Languages:</span> {languages}
+          </p>
+        </div>
+        {borders && (
+          <>
+            <p className='text-2xl font-semibold mb-6'>Border Countries:</p>
+            <div className='grid grid-cols-2 gap-4 auto-cols-auto auto-rows-auto mb-20'>
+              {borders.map((border) => (
+                <Link
+                  key={border.tld[0]}
+                  className='shadow-md text-center text-lg py-2 px-6 bg-white-text-elements'
+                  to={`/${border.name.common.toLowerCase()}`}
+                  state={{ country: border }}
+                >
+                  {border.name.common}
+                </Link>
+              ))}
+            </div>
+          </>
+        )}
       </article>
     )
   );
