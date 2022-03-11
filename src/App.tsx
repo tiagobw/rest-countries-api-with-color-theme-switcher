@@ -11,19 +11,21 @@ function App() {
     <Layout>
       <Form />
       {state.loading ? (
-        <p>Loading...</p>
+        <p className='justify-self-center'>Loading...</p>
       ) : state.errorMessage ? (
         <p>{state.errorMessage}</p>
       ) : (
-        state.countries.map((country) => (
-          <Link
-            to={`/${country.name.common.toLowerCase()}`}
-            state={{ country }}
-            key={country.tld[0]}
-          >
-            <Card country={country} />
-          </Link>
-        ))
+        <div className='justify-self-center'>
+          {state.countries.map((country) => (
+            <Link
+              to={`/${country.name.common.toLowerCase()}`}
+              state={{ country }}
+              key={country.tld[0]}
+            >
+              <Card country={country} />
+            </Link>
+          ))}
+        </div>
       )}
     </Layout>
   );
