@@ -62,7 +62,7 @@ const Detail = ({ country }: DetailProps) => {
   return (
     <>
       <Link
-        className='font-semibold py-3 w-1/3 bg-white-text-elements mt-12 drop-shadow-md'
+        className='font-semibold py-3 w-1/3 max-w-[11rem] bg-white-text-elements mt-12 drop-shadow-md'
         to='/'
       >
         <nav className='flex justify-center items-center '>
@@ -71,9 +71,9 @@ const Detail = ({ country }: DetailProps) => {
         </nav>
       </Link>
       {country && (
-        <article className='mt-20'>
+        <article className='mt-20 w-[350px] justify-self-center'>
           <img
-            className='h-[220px] w-full object-cover rounded-lg'
+            className='h-[250px] w-full max-w-[400px] object-cover rounded-lg'
             src={flags.svg}
             alt={`${name} flag`}
           />
