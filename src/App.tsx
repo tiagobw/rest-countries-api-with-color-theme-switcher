@@ -1,10 +1,6 @@
 import { useCountriesContext } from './countries/hooks/useCountriesContext';
-import { Country } from './countries/model/Country';
-import { AxiosCountriesFetcher } from './countries/axios/countriesApiCalls';
-import { CountriesActionTypes } from './countries/types/countriesTypes';
 import Form from './components/Form';
 import Card from './components/Card';
-import Detail from './components/Detail';
 import Layout from './components/Layout';
 import { Link } from 'react-router-dom';
 

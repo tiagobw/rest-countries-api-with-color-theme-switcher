@@ -13,8 +13,6 @@ const CountryPage = () => {
     );
   }
 
-  console.log('state as any', (state as any).country);
-
   return (
     <Layout>
       <Detail country={(state as any).country} />

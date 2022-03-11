@@ -10,11 +10,10 @@ import { DataConverter } from '../countries/utils/DataConverter';
 const Form = () => {
   const [country, setCountry] = useState('');
   const [region, setRegion] = useState('');
-  const { state, dispatch } = useCountriesContext();
+  const { dispatch } = useCountriesContext();
 
   const debouncedFetchAndSetCountry = useRef(
     debounce(async (countryToFetch: string) => {
-      console.log('countryToFetch:', countryToFetch);
       setCountry('');
       await fetchCountries(`/name/${countryToFetch}`, 8);
     }, 600),
@@ -39,7 +38,6 @@ const Form = () => {
           countries: country.getList(numberOfCountries),
         },
       });
-      console.log(state.countries);
     } catch (error) {
       dispatch({
         type: CountriesActionTypes.Error,
