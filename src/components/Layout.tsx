@@ -8,7 +8,7 @@ function Layout({ children }: LayoutProps) {
   return (
     <>
       <Header />
-      <main className='grid items-start px-6 bg-very-light-gray-background min-h-screen'>
+      <main className='grid items-start px-8 bg-very-light-gray-background min-h-screen'>
         {children}
       </main>
     </>

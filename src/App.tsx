@@ -18,7 +18,7 @@ function App() {
         <div className='justify-self-center'>
           {state.countries.map((country) => (
             <Link
-              to={`/${country.name.common.toLowerCase()}`}
+              to={`/${country.name.common.replace(/\s+/g, '-').toLowerCase()}`}
               state={{ country }}
               key={country.tld[0]}
             >
