@@ -71,7 +71,7 @@ const Form = () => {
         <input
           onChange={handleInputChange}
           value={country}
-          className='pl-20 py-4 rounded-md w-full shadow-md focus:outline-none placeholder:text-dark-gray-input'
+          className='pl-20 py-4 rounded-md min-w-[350px] w-full shadow-md focus:outline-none placeholder:text-dark-gray-input'
           placeholder='Search for a country...'
           type='text'
         />

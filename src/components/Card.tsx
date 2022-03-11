@@ -8,18 +8,25 @@ const Card = ({ country }: CardProps) => {
   const { flags, name, population, region, capital } = country;
 
   return (
-    <article>
-      <img src={flags.svg} alt={`${name} flag`} />
-      <h1>{name.common}</h1>
-      <p>
-        <span>Population:</span> {population.toLocaleString()}
-      </p>
-      <p>
-        <span>Region:</span> {region}
-      </p>
-      <p>
-        <span>Capital:</span> {capital[0]}
-      </p>
+    <article className='w-[350px] py-10 rounded-lg'>
+      <img
+        className='h-[220px] w-full object-cover rounded-t-lg'
+        src={flags.svg}
+        alt={`${name} flag`}
+      />
+      <div className='p-10 bg-white-text-elements rounded-b-lg'>
+        <h1 className='font-extrabold	text-3xl mb-6'>{name.common}</h1>
+        <p className='text-lg mb-2'>
+          <span className='font-semibold'>Population:</span>{' '}
+          {population.toLocaleString()}
+        </p>
+        <p className='text-lg mb-2'>
+          <span className='font-semibold'>Region:</span> {region}
+        </p>
+        <p className='text-lg mb-6'>
+          <span className='font-semibold'>Capital:</span> {capital[0]}
+        </p>
+      </div>
     </article>
   );
 };

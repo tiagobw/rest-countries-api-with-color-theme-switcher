@@ -1,14 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import App from './App';
 import { CountriesProvider } from './countries/context/CountriesContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <CountriesProvider>
-      <App />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<App />} />
+        </Routes>
+      </BrowserRouter>
     </CountriesProvider>
   </React.StrictMode>,
   document.getElementById('root'),
