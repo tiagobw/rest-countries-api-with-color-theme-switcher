@@ -2,11 +2,12 @@ import { createContext, useReducer } from 'react';
 
 import { countriesReducer } from './countriesReducer';
 import { CountriesActions, CountriesState } from '../types/countriesTypes';
+import { initialCountries } from '../../data/initial-countries';
 
 const initialState: CountriesState = {
-  countries: [],
+  countries: initialCountries || [],
   loading: false,
-  errorMessage: ''
+  errorMessage: '',
 };
 
 const CountriesContext = createContext<{

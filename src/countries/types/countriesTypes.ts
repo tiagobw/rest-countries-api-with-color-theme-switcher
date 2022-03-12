@@ -22,12 +22,12 @@ export type CountryType = {
   languages: {
     [key: string]: string;
   };
-  borders: string[] | null;
+  borders?: string[] | null;
   population: number;
   region: string;
   subregion: string;
   capital: string[];
-  tld: string[];
+  tld?: string[];
 };
 
 export type SelectedCountryType = {
@@ -47,7 +47,7 @@ export type SelectedCountryType = {
   region: string;
   subregion: string;
   capital: string[];
-  tld: string[];
+  tld?: string[];
 };
 
 export interface CountriesFetcher {
