@@ -8,16 +8,19 @@ import reportWebVitals from './reportWebVitals';
 import App from './App';
 import { CountriesProvider } from './countries/context/CountriesContext';
 import CountryPage from './pages/CountryPage';
+import { ThemeProvider } from './theme/ThemeContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <CountriesProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<App />} />
-          <Route path=':countryName' element={<CountryPage />} />
-        </Routes>
-      </BrowserRouter>
+      <ThemeProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<App />} />
+            <Route path=':countryName' element={<CountryPage />} />
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
     </CountriesProvider>
   </React.StrictMode>,
   document.getElementById('root'),

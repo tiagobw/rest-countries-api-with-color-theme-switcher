@@ -62,12 +62,12 @@ const Detail = ({ country }: DetailProps) => {
   return (
     <>
       <Link
-        className='font-semibold py-3 w-1/3 max-w-[11rem] bg-white-text-elements mt-12 drop-shadow-md'
+        className='font-semibold py-3 w-1/3 max-w-[11rem] bg-white-text-elements dark:bg-dark-blue mt-12 drop-shadow-md'
         to='/'
       >
         <nav className='flex justify-center items-center '>
-          <ImArrowLeft2 className='mr-3 text-lg' />
-          <p>Back</p>
+          <ImArrowLeft2 className='mr-3 text-lg dark:text-light-gray-text' />
+          <p className='dark:text-light-gray-text'>Back</p>
         </nav>
       </Link>
       {country && (
@@ -83,47 +83,59 @@ const Detail = ({ country }: DetailProps) => {
             alt={`${name} flag`}
           />
           <div className='py-10 mt-8 lg:grid lg:grid-cols-2 lg:mt-0 lg:gap-x-32'>
-            <div className="lg:col-span-full">
-              <h1 className='font-extrabold	text-3xl mb-6'>{name.common}</h1>
+            <div className='lg:col-span-full'>
+              <h1 className='font-extrabold	text-3xl mb-6 dark:text-white-text-elements'>
+                {name.common}
+              </h1>
             </div>
             <div>
-              <p className='text-lg mb-2'>
+              <p className='text-lg mb-2 dark:text-white-text-elements'>
                 <span className='font-semibold'>Native Name:</span>{' '}
-                {name.nativeName}
+                <span className='dark:text-light-gray-text'>{name.nativeName}</span>
               </p>
-              <p className='text-lg mb-2'>
+              <p className='text-lg mb-2 dark:text-white-text-elements'>
                 <span className='font-semibold'>Population:</span>{' '}
-                {population.toLocaleString()}
+                <span className='dark:text-light-gray-text'>{population.toLocaleString()}</span>
               </p>
-              <p className='text-lg mb-2'>
-                <span className='font-semibold'>Region:</span> {region}
+              <p className='text-lg mb-2 dark:text-white-text-elements'>
+                <span className='font-semibold'>Region:</span>{' '}
+                <span className='dark:text-light-gray-text'>{region}</span>
               </p>
-              <p className='text-lg mb-2'>
-                <span className='font-semibold'>Sub Region:</span> {subregion}
+              <p className='text-lg mb-2 dark:text-white-text-elements'>
+                <span className='font-semibold'>Sub Region:</span>{' '}
+                <span className='dark:text-light-gray-text'>{subregion}</span>
               </p>
               {capital && capital[0] && (
-                <p className='text-lg mb-14'>
-                  <span className='font-semibold'>Capital:</span> {capital[0]}
+                <p className='text-lg mb-14 dark:text-white-text-elements'>
+                  <span className='font-semibold'>Capital:</span>{' '}
+                  <span className='dark:text-light-gray-text'>{capital[0]}</span>
                 </p>
               )}
             </div>
             <div>
-              <p className='text-lg mb-2'>
-                <span className='font-semibold'>Top Level Domain:</span> {tld}
+              <p className='text-lg mb-2 dark:text-white-text-elements'>
+                <span className='font-semibold'>Top Level Domain:</span>{' '}
+                <span className='dark:text-light-gray-text'>{tld}</span>
               </p>
-              <p className='text-lg mb-2'>
-                <span className='font-semibold'>Currencies:</span> {currencies}
+              <p className='text-lg mb-2 dark:text-white-text-elements'>
+                <span className='font-semibold'>Currencies:</span>{' '}
+                <span className='dark:text-light-gray-text'>{currencies}</span>
               </p>
-              <p className='text-lg mb-14'>
-                <span className='font-semibold'>Languages:</span> {languages}
+              <p className='text-lg mb-14 dark:text-white-text-elements'>
+                <span className='font-semibold'>Languages:</span>{' '}
+                <span className='dark:text-light-gray-text'>{languages}</span>
               </p>
             </div>
             {borders && (
               <div className='lg:col-span-full lg:flex lg:items-start'>
-                <p className='text-2xl font-semibold mb-6 lg:mr-6 lg:text-lg lg:mt-2'>Border Countries:</p>
-                <div className={`grid grid-cols-2 gap-4 auto-cols-auto 
+                <p className='text-2xl font-semibold mb-6 lg:mr-6 lg:text-lg lg:mt-2 dark:text-white-text-elements'>
+                  Border Countries:
+                </p>
+                <div
+                  className={`grid grid-cols-2 gap-4 auto-cols-auto 
                                   auto-rows-auto mb-16
-                                `}>
+                                `}
+                >
                   {borders.map((border) => (
                     <Link
                       key={
@@ -131,7 +143,7 @@ const Detail = ({ country }: DetailProps) => {
                           ? border.tld[0] + border.name.official
                           : border.name.official
                       }
-                      className='rounded-md shadow-md text-center text-lg py-2 px-6 bg-white-text-elements'
+                      className='rounded-md shadow-md text-center text-lg py-2 px-6 bg-white-text-elements dark:bg-dark-blue dark:text-light-gray-text'
                       to={`/${border.name.common
                         .replace(/\s+/g, '-')
                         .toLowerCase()}`}

@@ -11,13 +11,14 @@ function App() {
     <Layout>
       <Form />
       {state.loading ? (
-        <p className='justify-self-center'>Loading...</p>
+        <p className='justify-self-center dark:text-white-text-elements'>Loading...</p>
       ) : state.errorMessage ? (
         <p>{state.errorMessage}</p>
       ) : (
         <div className={`justify-self-center
                           lg:grid lg:grid-cols-3 lg:gap-x-20 lg:w-full
                           2xl:grid-cols-3
+                          2xl:gap-x-[10.5rem]
                         `}>
           {state.countries.map((country) => (
             <Link
