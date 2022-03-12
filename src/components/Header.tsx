@@ -10,7 +10,8 @@ const Header = () => {
       className={`bg-white-text-elements dark:bg-dark-blue
                     dark:text-white-text-elements
                     flex justify-between 
-                    items-center h-28 drop-shadow-md px-7 
+                    items-center h-28 shadow-md px-7 
+                    relative
                     lg:px-24 lg:h-24
                     2xl:px-60
                     `}

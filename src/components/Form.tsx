@@ -66,7 +66,7 @@ const Form = () => {
 
   return (
     <form className='flex flex-col justify-between pt-10 pb-5 lg:flex-row lg:mt-3 lg:pb-3'>
-      <div className='flex w-full relative mb-10 lg:mb-0 lg:w-1/3 lg:h-full bg-white-text-elements dark:bg-dark-blue drop-shadow-md'>
+      <div className='flex w-full relative mb-10 lg:mb-0 lg:w-1/3 lg:h-full bg-white-text-elements dark:bg-dark-blue shadow-md'>
         <AiOutlineSearch className='text-xl text-dark-gray-input dark:text-white-text-elements absolute ml-8 left-0 top-1/2 -translate-y-1/2' />
         <input
           onChange={handleInputChange}

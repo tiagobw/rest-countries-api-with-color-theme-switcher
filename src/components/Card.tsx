@@ -8,7 +8,7 @@ const Card = ({ country }: CardProps) => {
   const { flags, name, population, region, capital } = country;
 
   return (
-    <article className='w-[350px] py-10 rounded-lg drop-shadow-sm lg:m-0 lg:w-[360px]'>
+    <article className='w-[350px] my-10 rounded-lg shadow-sm lg:w-[360px]'>
       <img
         className='h-[220px] w-full object-cover rounded-t-lg lg:h-[235px] dark:bg-dark-blue'
         src={flags.svg}

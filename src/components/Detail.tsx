@@ -62,7 +62,7 @@ const Detail = ({ country }: DetailProps) => {
   return (
     <>
       <Link
-        className='font-semibold py-3 w-1/3 max-w-[11rem] bg-white-text-elements dark:bg-dark-blue mt-12 drop-shadow-md'
+        className='font-semibold py-3 w-1/3 max-w-[11rem] bg-white-text-elements dark:bg-dark-blue mt-12 shadow-md'
         to='/'
       >
         <nav className='flex justify-center items-center '>
