@@ -8,7 +8,7 @@ const CountryPage = () => {
   if (!(state as any)?.country) {
     return (
       <Layout>
-        <p>Sorry, something went wrong...</p>
+        <p className="dark:text-light-gray-text">Sorry, something went wrong...</p>
       </Layout>
     );
   }

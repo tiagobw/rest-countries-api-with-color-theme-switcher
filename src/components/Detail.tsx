@@ -43,7 +43,7 @@ const Detail = ({ country }: DetailProps) => {
   }, [country, dispatch]);
 
   if (!selectedCountry || state.loading) {
-    return <p className='pt-20 justify-self-center'>Loading...</p>;
+    return <p className='dark:text-light-gray-text pt-20 justify-self-center'>Loading...</p>;
   }
 
   const {
