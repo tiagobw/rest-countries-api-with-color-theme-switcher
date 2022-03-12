@@ -63,8 +63,8 @@ const Form = () => {
   };
 
   return (
-    <form className='flex flex-col justify-between pt-10 pb-5'>
-      <div className='flex w-full relative mb-10'>
+    <form className='flex flex-col justify-between pt-10 pb-5 md:flex-row'>
+      <div className='flex w-full relative mb-10 md:w-1/3 md:h-full'>
         <AiOutlineSearch className='text-xl text-dark-gray-input absolute ml-8 left-0 top-1/2 -translate-y-1/2' />
         <input
           onChange={handleInputChange}
@@ -74,11 +74,15 @@ const Form = () => {
           type='text'
         />
       </div>
-      <div className='flex w-[60%] relative'>
+      <div className='flex w-[25rem] relative md:w-[15rem] md:h-full'>
         <select
           value={region}
           onChange={handleSelectChange}
-          className='pl-8 py-4 w-full rounded-md shadow-md focus:outline-none appearance-none bg-down-arrow bg-no-repeat bg-[center_right_1.5rem] bg- bg-[length:0.75rem_0.75rem] cursor-pointer'
+          className={`pl-8 py-4 w-full rounded-md shadow-md 
+                      focus:outline-none appearance-none bg-down-arrow 
+                      bg-no-repeat bg-[center_right_1.5rem] 
+                      bg-[length:0.75rem_0.75rem] cursor-pointer
+                      `}
           name='regions'
           id='regions'
         >
