@@ -15,7 +15,10 @@ function App() {
       ) : state.errorMessage ? (
         <p>{state.errorMessage}</p>
       ) : (
-        <div className='justify-self-center'>
+        <div className={`justify-self-center
+                          lg:grid lg:grid-cols-3 lg:gap-x-20 lg:w-full
+                          2xl:grid-cols-4
+                        `}>
           {state.countries.map((country) => (
             <Link
               to={`/${country.name.common.replace(/\s+/g, '-').toLowerCase()}`}
