@@ -114,7 +114,11 @@ const Detail = ({ country }: DetailProps) => {
               <div className='grid grid-cols-2 gap-4 auto-cols-auto auto-rows-auto mb-20'>
                 {borders.map((border) => (
                   <Link
-                    key={border.tld[0]}
+                    key={
+                      border.tld
+                        ? border.tld[0] + border.name.official
+                        : border.name.official
+                    }
                     className='shadow-md text-center text-lg py-2 px-6 bg-white-text-elements'
                     to={`/${border.name.common
                       .replace(/\s+/g, '-')

@@ -20,7 +20,11 @@ function App() {
             <Link
               to={`/${country.name.common.replace(/\s+/g, '-').toLowerCase()}`}
               state={{ country }}
-              key={country.tld[0]}
+              key={
+                country.tld
+                  ? country.tld[0] + country.name.official
+                  : country.name.official
+              }
             >
               <Card country={country} />
             </Link>
