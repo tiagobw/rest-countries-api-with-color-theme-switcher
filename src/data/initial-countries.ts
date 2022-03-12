@@ -1050,341 +1050,6 @@ export const initialCountries: InitialCountries[] = [
   },
   {
     name: {
-      common: 'Japan',
-      official: 'Japan',
-      nativeName: {
-        jpn: {
-          official: '日本',
-          common: '日本',
-        },
-      },
-    },
-    tld: ['.jp', '.みんな'],
-    cca2: 'JP',
-    ccn3: '392',
-    cca3: 'JPN',
-    cioc: 'JPN',
-    independent: true,
-    status: 'officially-assigned',
-    unMember: true,
-    currencies: {
-      JPY: {
-        name: 'Japanese yen',
-        symbol: '¥',
-      },
-    },
-    idd: {
-      root: '+8',
-      suffixes: ['1'],
-    },
-    capital: ['Tokyo'],
-    altSpellings: ['JP', 'Nippon', 'Nihon'],
-    region: 'Asia',
-    subregion: 'Eastern Asia',
-    languages: {
-      jpn: 'Japanese',
-    },
-    translations: {
-      ara: {
-        official: 'اليابان',
-        common: 'اليابان',
-      },
-      ces: {
-        official: 'Japonsko',
-        common: 'Japonsko',
-      },
-      cym: {
-        official: 'Japan',
-        common: 'Japan',
-      },
-      deu: {
-        official: 'Japan',
-        common: 'Japan',
-      },
-      est: {
-        official: 'Jaapan',
-        common: 'Jaapan',
-      },
-      fin: {
-        official: 'Japani',
-        common: 'Japani',
-      },
-      fra: {
-        official: 'Japon',
-        common: 'Japon',
-      },
-      hrv: {
-        official: 'Japan',
-        common: 'Japan',
-      },
-      hun: {
-        official: 'Japán',
-        common: 'Japán',
-      },
-      ita: {
-        official: 'Giappone',
-        common: 'Giappone',
-      },
-      jpn: {
-        official: '日本',
-        common: '日本',
-      },
-      kor: {
-        official: '일본국',
-        common: '일본',
-      },
-      nld: {
-        official: 'Japan',
-        common: 'Japan',
-      },
-      per: {
-        official: 'ژاپن',
-        common: 'ژاپن',
-      },
-      pol: {
-        official: 'Japonia',
-        common: 'Japonia',
-      },
-      por: {
-        official: 'Japão',
-        common: 'Japão',
-      },
-      rus: {
-        official: 'Япония',
-        common: 'Япония',
-      },
-      slk: {
-        official: 'Japonsko',
-        common: 'Japonsko',
-      },
-      spa: {
-        official: 'Japón',
-        common: 'Japón',
-      },
-      swe: {
-        official: 'Japan',
-        common: 'Japan',
-      },
-      urd: {
-        official: 'جاپان',
-        common: 'جاپان',
-      },
-      zho: {
-        official: '日本国',
-        common: '日本',
-      },
-    },
-    latlng: [36.0, 138.0],
-    landlocked: false,
-    area: 377930.0,
-    demonyms: {
-      eng: {
-        f: 'Japanese',
-        m: 'Japanese',
-      },
-      fra: {
-        f: 'Japonaise',
-        m: 'Japonais',
-      },
-    },
-    flag: '🇯🇵',
-    maps: {
-      googleMaps: 'https://goo.gl/maps/NGTLSCSrA8bMrvnX9',
-      openStreetMaps: 'https://www.openstreetmap.org/relation/382313',
-    },
-    population: 125836021,
-    gini: {
-      '2013': 32.9,
-    },
-    fifa: 'JPN',
-    car: {
-      signs: ['J'],
-      side: 'left',
-    },
-    timezones: ['UTC+09:00'],
-    continents: ['Asia'],
-    flags: {
-      png: 'https://flagcdn.com/w320/jp.png',
-      svg: 'https://flagcdn.com/jp.svg',
-    },
-    coatOfArms: {
-      png: 'https://mainfacts.com/media/images/coats_of_arms/jp.png',
-      svg: 'https://mainfacts.com/media/images/coats_of_arms/jp.svg',
-    },
-    startOfWeek: 'monday',
-    capitalInfo: {
-      latlng: [35.68, 139.75],
-    },
-    postalCode: {
-      format: '###-####',
-      regex: '^(\\d{7})$',
-    },
-  },
-  {
-    name: {
-      common: 'Åland Islands',
-      official: 'Åland Islands',
-      nativeName: {
-        swe: {
-          official: 'Landskapet Åland',
-          common: 'Åland',
-        },
-      },
-    },
-    tld: ['.ax'],
-    cca2: 'AX',
-    ccn3: '248',
-    cca3: 'ALA',
-    independent: false,
-    status: 'officially-assigned',
-    unMember: false,
-    currencies: {
-      EUR: {
-        name: 'Euro',
-        symbol: '€',
-      },
-    },
-    idd: {
-      root: '+3',
-      suffixes: ['5818'],
-    },
-    capital: ['Mariehamn'],
-    altSpellings: ['AX', 'Aaland', 'Aland', 'Ahvenanmaa'],
-    region: 'Europe',
-    subregion: 'Northern Europe',
-    languages: {
-      swe: 'Swedish',
-    },
-    translations: {
-      ara: {
-        official: 'جزر أولاند',
-        common: 'جزر أولاند',
-      },
-      ces: {
-        official: 'Ålandské ostrovy',
-        common: 'Ålandy',
-      },
-      cym: {
-        official: 'Åland Islands',
-        common: 'Åland Islands',
-      },
-      deu: {
-        official: 'Åland-Inseln',
-        common: 'Åland',
-      },
-      est: {
-        official: 'Ahvenamaa maakond',
-        common: 'Ahvenamaa',
-      },
-      fin: {
-        official: 'Ahvenanmaan maakunta',
-        common: 'Ahvenanmaa',
-      },
-      fra: {
-        official: 'Ahvenanmaa',
-        common: 'Ahvenanmaa',
-      },
-      hrv: {
-        official: 'Aland Islands',
-        common: 'Ålandski otoci',
-      },
-      hun: {
-        official: 'Åland-szigetek',
-        common: 'Åland-szigetek',
-      },
-      ita: {
-        official: 'Isole Åland',
-        common: 'Isole Aland',
-      },
-      jpn: {
-        official: 'オーランド諸島',
-        common: 'オーランド諸島',
-      },
-      kor: {
-        official: '올란드 제도',
-        common: '올란드 제도',
-      },
-      nld: {
-        official: 'Åland eilanden',
-        common: 'Ålandeilanden',
-      },
-      per: {
-        official: 'جزایر الند',
-        common: 'جزایر الند',
-      },
-      pol: {
-        official: 'Wyspy Alandzkie',
-        common: 'Wyspy Alandzkie',
-      },
-      por: {
-        official: 'Ilhas Åland',
-        common: 'Alândia',
-      },
-      rus: {
-        official: 'Аландские острова',
-        common: 'Аландские острова',
-      },
-      slk: {
-        official: 'Alandské ostrovy',
-        common: 'Alandy',
-      },
-      spa: {
-        official: 'Islas Åland',
-        common: 'Alandia',
-      },
-      swe: {
-        official: 'Åland',
-        common: 'Åland',
-      },
-      urd: {
-        official: 'جزائر اولند',
-        common: 'جزائر اولند',
-      },
-      zho: {
-        official: '奥兰群岛',
-        common: '奥兰群岛',
-      },
-    },
-    latlng: [60.116667, 19.9],
-    landlocked: false,
-    area: 1580.0,
-    demonyms: {
-      eng: {
-        f: 'Ålandish',
-        m: 'Ålandish',
-      },
-      fra: {
-        f: 'Ålandaise',
-        m: 'Ålandais',
-      },
-    },
-    flag: '🇦🇽',
-    maps: {
-      googleMaps: 'https://goo.gl/maps/ewFb3vYsfUmVCoSb8',
-      openStreetMaps: 'https://www.openstreetmap.org/relation/1650407',
-    },
-    population: 29458,
-    car: {
-      signs: [''],
-      side: 'right',
-    },
-    timezones: ['UTC+02:00'],
-    continents: ['Europe'],
-    flags: {
-      png: 'https://flagcdn.com/w320/ax.png',
-      svg: 'https://flagcdn.com/ax.svg',
-    },
-    coatOfArms: {
-      png: 'https://mainfacts.com/media/images/coats_of_arms/ax.png',
-      svg: 'https://mainfacts.com/media/images/coats_of_arms/ax.svg',
-    },
-    startOfWeek: 'monday',
-    capitalInfo: {
-      latlng: [60.12, 19.9],
-    },
-  },
-  {
-    name: {
       common: 'Albania',
       official: 'Republic of Albania',
       nativeName: {
@@ -1554,171 +1219,171 @@ export const initialCountries: InitialCountries[] = [
   },
   {
     name: {
-      common: 'Algeria',
-      official: "People's Democratic Republic of Algeria",
+      common: 'Spain',
+      official: 'Kingdom of Spain',
       nativeName: {
-        ara: {
-          official: 'الجمهورية الديمقراطية الشعبية الجزائرية',
-          common: 'الجزائر',
+        spa: {
+          official: 'Reino de España',
+          common: 'España',
         },
       },
     },
-    tld: ['.dz', 'الجزائر.'],
-    cca2: 'DZ',
-    ccn3: '012',
-    cca3: 'DZA',
-    cioc: 'ALG',
+    tld: ['.es'],
+    cca2: 'ES',
+    ccn3: '724',
+    cca3: 'ESP',
+    cioc: 'ESP',
     independent: true,
     status: 'officially-assigned',
     unMember: true,
     currencies: {
-      DZD: {
-        name: 'Algerian dinar',
-        symbol: 'د.ج',
+      EUR: {
+        name: 'Euro',
+        symbol: '€',
       },
     },
     idd: {
-      root: '+2',
-      suffixes: ['13'],
+      root: '+3',
+      suffixes: ['4'],
     },
-    capital: ['Algiers'],
-    altSpellings: ['DZ', 'Dzayer', 'Algérie'],
-    region: 'Africa',
-    subregion: 'Northern Africa',
+    capital: ['Madrid'],
+    altSpellings: ['ES', 'Kingdom of Spain', 'Reino de España'],
+    region: 'Europe',
+    subregion: 'Southern Europe',
     languages: {
-      ara: 'Arabic',
+      spa: 'Spanish',
     },
     translations: {
       ara: {
-        official: 'الجمهورية الديمقراطية الشعبية الجزائرية',
-        common: 'الجزائر',
+        official: 'مملكة إسبانيا',
+        common: 'إسبانيا',
       },
       ces: {
-        official: 'Alžírská demokratická a lidová republika',
-        common: 'Alžírsko',
+        official: 'Španělské království',
+        common: 'Španělsko',
       },
       cym: {
-        official: 'Gweriniaeth Ddemocrataidd Pobl Algeria',
-        common: 'Algeria',
+        official: 'Kingdom of Spain',
+        common: 'Spain',
       },
       deu: {
-        official: 'Demokratische Volksrepublik Algerien',
-        common: 'Algerien',
+        official: 'Königreich Spanien',
+        common: 'Spanien',
       },
       est: {
-        official: 'Alžeeria Demokraatlik Rahvavabariik',
-        common: 'Alžeeria',
+        official: 'Hispaania Kuningriik',
+        common: 'Hispaania',
       },
       fin: {
-        official: 'Algerian demokraattinen kansantasavalta',
-        common: 'Algeria',
+        official: 'Espanjan kuningaskunta',
+        common: 'Espanja',
       },
       fra: {
-        official: "République démocratique et populaire d'Algérie",
-        common: 'Algérie',
+        official: "Royaume d'Espagne",
+        common: 'Espagne',
       },
       hrv: {
-        official: 'Narodna Demokratska Republika Alžir',
-        common: 'Alžir',
+        official: 'Kraljevina Španjolska',
+        common: 'Španjolska',
       },
       hun: {
-        official: 'Algériai Népi Demokratikus Köztársaság',
-        common: 'Algéria',
+        official: 'Spanyol Királyság',
+        common: 'Spanyolország',
       },
       ita: {
-        official: 'Repubblica popolare democratica di Algeria',
-        common: 'Algeria',
+        official: 'Regno di Spagna',
+        common: 'Spagna',
       },
       jpn: {
-        official: 'アルジェリア人民民主共和国',
-        common: 'アルジェリア',
+        official: 'スペイン王国',
+        common: 'スペイン',
       },
       kor: {
-        official: '알제리 인민 민주 공화국',
-        common: '알제리',
+        official: '에스파냐 왕국',
+        common: '스페인',
       },
       nld: {
-        official: 'Democratische Volksrepubliek Algerije',
-        common: 'Algerije',
+        official: 'Koninkrijk Spanje',
+        common: 'Spanje',
       },
       per: {
-        official: 'جمهوری دموکراتیک خلق الجزایر',
-        common: 'الجزایر',
+        official: 'پادشاهی اسپانیا',
+        common: 'اسپانیا',
       },
       pol: {
-        official: 'Algierska Republika Ludowo-Demokratyczna',
-        common: 'Algieria',
+        official: 'Królestwo Hiszpanii ',
+        common: 'Hiszpania',
       },
       por: {
-        official: 'República Argelina Democrática e Popular',
-        common: 'Argélia',
+        official: 'Reino de Espanha',
+        common: 'Espanha',
       },
       rus: {
-        official: 'Народно-Демократическая Республика Алжир',
-        common: 'Алжир',
+        official: 'Королевство Испания',
+        common: 'Испания',
       },
       slk: {
-        official: 'Alžírska demokratická ľudová republika',
-        common: 'Alžírsko',
+        official: 'Španielske kráľovstvo',
+        common: 'Španielsko',
       },
       spa: {
-        official: 'República Argelina Democrática y Popular',
-        common: 'Argelia',
+        official: 'Reino de España',
+        common: 'España',
       },
       swe: {
-        official: 'Demokratiska folkrepubliken Algeriet',
-        common: 'Algeriet',
+        official: 'Konungariket Spanien',
+        common: 'Spanien',
       },
       urd: {
-        official: 'عوامی جمہوری جمہوریہ الجزائر',
-        common: 'الجزائر',
+        official: 'مملکتِ ہسپانیہ',
+        common: 'ہسپانیہ',
       },
       zho: {
-        official: '阿尔及利亚人民民主共和国',
-        common: '阿尔及利亚',
+        official: '西班牙王国',
+        common: '西班牙',
       },
     },
-    latlng: [28.0, 3.0],
+    latlng: [40.0, -4.0],
     landlocked: false,
-    borders: ['TUN', 'LBY', 'NER', 'ESH', 'MRT', 'MLI', 'MAR'],
-    area: 2381741.0,
+    borders: ['AND', 'FRA', 'GIB', 'PRT', 'MAR'],
+    area: 505992.0,
     demonyms: {
       eng: {
-        f: 'Algerian',
-        m: 'Algerian',
+        f: 'Spanish',
+        m: 'Spanish',
       },
       fra: {
-        f: 'Algérienne',
-        m: 'Algérien',
+        f: 'Espagnole',
+        m: 'Espagnol',
       },
     },
-    flag: '🇩🇿',
+    flag: '🇪🇸',
     maps: {
-      googleMaps: 'https://goo.gl/maps/RsAyAfyaiNVb8DpW8',
-      openStreetMaps: 'https://www.openstreetmap.org/relation/192756',
+      googleMaps: 'https://goo.gl/maps/138JaXW8EZzRVitY9',
+      openStreetMaps: 'https://www.openstreetmap.org/relation/1311341',
     },
-    population: 44700000,
+    population: 47351567,
     gini: {
-      '2011': 27.6,
+      '2018': 34.7,
     },
-    fifa: 'ALG',
+    fifa: 'ESP',
     car: {
-      signs: ['DZ'],
+      signs: ['E'],
       side: 'right',
     },
-    timezones: ['UTC+01:00'],
-    continents: ['Africa'],
+    timezones: ['UTC', 'UTC+01:00'],
+    continents: ['Europe'],
     flags: {
-      png: 'https://flagcdn.com/w320/dz.png',
-      svg: 'https://flagcdn.com/dz.svg',
+      png: 'https://flagcdn.com/w320/es.png',
+      svg: 'https://flagcdn.com/es.svg',
     },
     coatOfArms: {
-      png: 'https://mainfacts.com/media/images/coats_of_arms/dz.png',
-      svg: 'https://mainfacts.com/media/images/coats_of_arms/dz.svg',
+      png: 'https://mainfacts.com/media/images/coats_of_arms/es.png',
+      svg: 'https://mainfacts.com/media/images/coats_of_arms/es.svg',
     },
-    startOfWeek: 'sunday',
+    startOfWeek: 'monday',
     capitalInfo: {
-      latlng: [36.75, 3.05],
+      latlng: [40.4, -3.68],
     },
     postalCode: {
       format: '#####',
