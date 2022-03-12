@@ -65,20 +65,37 @@ const Form = () => {
   };
 
   return (
-    <form className='flex flex-col justify-between pt-10 pb-5 lg:flex-row lg:mt-3 lg:pb-3'>
-      <div className='flex w-full relative mb-10 lg:mb-0 lg:w-1/3 lg:h-full bg-white-text-elements dark:bg-dark-blue shadow-md'>
-        <AiOutlineSearch className='text-xl text-dark-gray-input dark:text-white-text-elements absolute ml-8 left-0 top-1/2 -translate-y-1/2' />
+    <form
+      className={`flex flex-col justify-between pt-10 pb-5 
+                  lg:flex-row lg:mt-3 lg:pb-3
+                `}
+    >
+      <div
+        className={`flex w-full relative mb-10 lg:mb-0 lg:w-1/3 lg:h-full 
+                      bg-white-text-elements dark:bg-dark-blue shadow-md
+                      `}
+      >
+        <AiOutlineSearch
+          className={`text-xl text-dark-gray-input 
+                      dark:text-white-text-elements absolute 
+                      ml-8 left-0 top-1/2 -translate-y-1/2
+                    `}
+        />
         <input
           onChange={handleInputChange}
           value={country}
-          className='pl-20 py-4 rounded-md min-w-[350px] w-full focus:outline-none placeholder:text-dark-gray-input dark:placeholder:text-white-text-elements dark:bg-dark-blue dark:text-white-text-elements'
+          className={`pl-20 py-4 rounded-md w-full 
+                      focus:outline-none placeholder:text-dark-gray-input
+                    dark:placeholder:text-white-text-elements 
+                    dark:bg-dark-blue dark:text-white-text-elements
+                    `}
           placeholder='Search for a country...'
           type='text'
         />
       </div>
       <div className='flex w-[15rem] max-w-[100%] relative lg:h-full'>
         <select
-          aria-label="Regions"
+          aria-label='Regions'
           value={region}
           onChange={handleSelectChange}
           className={`pl-8 py-4 w-full rounded-md shadow-md 

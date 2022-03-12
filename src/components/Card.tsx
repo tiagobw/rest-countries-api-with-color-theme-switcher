@@ -8,13 +8,13 @@ const Card = ({ country }: CardProps) => {
   const { flags, name, population, region, capital } = country;
 
   return (
-    <article className='w-[350px] my-10 rounded-lg shadow-sm lg:w-[360px]'>
+    <article className='my-10 rounded-lg shadow-sm lg:w-[360px]'>
       <img
-        className='h-[220px] w-full object-cover rounded-t-lg lg:h-[235px] dark:bg-dark-blue'
+        className='h-[200px] w-full object-cover rounded-t-lg lg:h-[235px] dark:bg-dark-blue'
         src={flags.svg}
         alt={`${name} flag`}
       />
-      <div className='p-10 bg-white-text-elements dark:bg-dark-blue rounded-b-lg'>
+      <div className='p-10 pb-5 bg-white-text-elements dark:bg-dark-blue rounded-b-lg'>
         <h2 className='dark:text-white-text-elements font-extrabold	text-3xl mb-6 lg:text-2xl'>
           {name.common}
         </h2>

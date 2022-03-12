@@ -72,12 +72,12 @@ const Detail = ({ country }: DetailProps) => {
       </Link>
       {country && (
         <article
-          className={`mt-20 w-[350px] justify-self-center 
+          className={`mt-16 lg:mt-20 justify-self-center 
                       lg:grid lg:grid-cols-2 lg:gap-x-36 lg:w-full
                     `}
         >
           <img
-            className={`h-[250px] w-full max-w-[400px] object-cover rounded-lg
+            className={`h-[230px] w-full max-w-[400px] object-cover rounded-lg
                         lg:h-[400px] lg:max-w-[580px] lg:w-[100%]`}
             src={flags.svg}
             alt={`${name} flag`}

@@ -10,13 +10,13 @@ const Header = () => {
       className={`bg-white-text-elements dark:bg-dark-blue
                     dark:text-white-text-elements
                     flex justify-between 
-                    items-center h-28 shadow-md px-7 
+                    items-center h-28 shadow-md px-8
                     relative
                     lg:px-24 lg:h-24
                     2xl:px-60
                     `}
     >
-      <h1 className='font-extrabold text-xl cursor-pointer lg:text-2xl'>
+      <h1 className='font-extrabold text-base cursor-pointer lg:text-2xl'>
         <Link to='/'>Where in the world?</Link>
       </h1>
       <div
@@ -24,11 +24,11 @@ const Header = () => {
         className='flex items-center cursor-pointer'
       >
         {darkTheme ? (
-          <BsSun className='text-2xl mr-3' />
+          <BsSun className='text-xl mr-3' />
         ) : (
           <BsMoon className='text-xl mr-3' />
         )}
-        <p className='text-lg'>{darkTheme ? 'Light Mode' : 'Dark Mode'}</p>
+        <p className='text-base'>{darkTheme ? 'Light Mode' : 'Dark Mode'}</p>
       </div>
     </header>
   );
