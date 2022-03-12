@@ -1,4 +1,4 @@
-import { countriesAxios } from './countriesConfiguration';
+import { countriesAxios } from './axiosCountriesConfiguration';
 import { CountriesFetcher, CountryType } from '../types/countriesTypes';
 
 class AxiosCountriesFetcher implements CountriesFetcher {

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ImArrowLeft2 } from 'react-icons/im';
 
 import { Country } from '../countries/model/Country';
-import { AxiosCountriesFetcher } from '../countries/axios/countriesApiCalls';
+import { AxiosCountriesFetcher } from '../countries/axios/AxiosCountriesFetcher';
 import {
   CountriesActionTypes,
   CountryType,

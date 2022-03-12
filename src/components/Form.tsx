@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
-import { AxiosCountriesFetcher } from '../countries/axios/countriesApiCalls';
+import { AxiosCountriesFetcher } from '../countries/axios/AxiosCountriesFetcher';
 import { useCountriesContext } from '../countries/hooks/useCountriesContext';
 import { Country } from '../countries/model/Country';
 import { CountriesActionTypes } from '../countries/types/countriesTypes';
