@@ -15,9 +15,9 @@ const Card = ({ country }: CardProps) => {
         alt={`${name} flag`}
       />
       <div className='p-10 bg-white-text-elements dark:bg-dark-blue rounded-b-lg'>
-        <h1 className='dark:text-white-text-elements font-extrabold	text-3xl mb-6 lg:text-2xl'>
+        <h2 className='dark:text-white-text-elements font-extrabold	text-3xl mb-6 lg:text-2xl'>
           {name.common}
-        </h1>
+        </h2>
         <p className='dark:text-white-text-elements text-lg mb-2 lg:text-base'>
           <span className='font-semibold'>Population:</span>{' '}
           <span className='dark:text-light-gray-text'>
