@@ -17,7 +17,7 @@ function App() {
       ) : (
         <div className={`justify-self-center
                           lg:grid lg:grid-cols-3 lg:gap-x-20 lg:w-full
-                          2xl:grid-cols-4
+                          2xl:grid-cols-3
                         `}>
           {state.countries.map((country) => (
             <Link

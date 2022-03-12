@@ -71,66 +71,79 @@ const Detail = ({ country }: DetailProps) => {
         </nav>
       </Link>
       {country && (
-        <article className='mt-20 w-[350px] justify-self-center'>
+        <article
+          className={`mt-20 w-[350px] justify-self-center 
+                      lg:grid lg:grid-cols-2 lg:gap-x-36 lg:w-full
+                    `}
+        >
           <img
-            className='h-[250px] w-full max-w-[400px] object-cover rounded-lg'
+            className={`h-[250px] w-full max-w-[400px] object-cover rounded-lg
+                        lg:h-[400px] lg:max-w-[580px] lg:w-[100%]`}
             src={flags.svg}
             alt={`${name} flag`}
           />
-          <div className='py-10'>
-            <h1 className='font-extrabold	text-3xl mb-6'>{name.common}</h1>
-            <p className='text-lg mb-2'>
-              <span className='font-semibold'>Native Name:</span>{' '}
-              {name.nativeName}
-            </p>
-            <p className='text-lg mb-2'>
-              <span className='font-semibold'>Population:</span>{' '}
-              {population.toLocaleString()}
-            </p>
-            <p className='text-lg mb-2'>
-              <span className='font-semibold'>Region:</span> {region}
-            </p>
-            <p className='text-lg mb-2'>
-              <span className='font-semibold'>Sub Region:</span> {subregion}
-            </p>
-            {capital && capital[0] && (
-              <p className='text-lg mb-12'>
-                <span className='font-semibold'>Capital:</span> {capital[0]}
+          <div className='py-10 mt-8 lg:grid lg:grid-cols-2 lg:mt-0 lg:gap-x-32'>
+            <div className="lg:col-span-full">
+              <h1 className='font-extrabold	text-3xl mb-6'>{name.common}</h1>
+            </div>
+            <div>
+              <p className='text-lg mb-2'>
+                <span className='font-semibold'>Native Name:</span>{' '}
+                {name.nativeName}
               </p>
-            )}
-            <p className='text-lg mb-2'>
-              <span className='font-semibold'>Top Level Domain:</span> {tld}
-            </p>
-            <p className='text-lg mb-2'>
-              <span className='font-semibold'>Currencies:</span> {currencies}
-            </p>
-            <p className='text-lg mb-2'>
-              <span className='font-semibold'>Languages:</span> {languages}
-            </p>
-          </div>
-          {borders && (
-            <>
-              <p className='text-2xl font-semibold mb-6'>Border Countries:</p>
-              <div className='grid grid-cols-2 gap-4 auto-cols-auto auto-rows-auto mb-20'>
-                {borders.map((border) => (
-                  <Link
-                    key={
-                      border.tld
-                        ? border.tld[0] + border.name.official
-                        : border.name.official
-                    }
-                    className='shadow-md text-center text-lg py-2 px-6 bg-white-text-elements'
-                    to={`/${border.name.common
-                      .replace(/\s+/g, '-')
-                      .toLowerCase()}`}
-                    state={{ country: border }}
-                  >
-                    {border.name.common}
-                  </Link>
-                ))}
+              <p className='text-lg mb-2'>
+                <span className='font-semibold'>Population:</span>{' '}
+                {population.toLocaleString()}
+              </p>
+              <p className='text-lg mb-2'>
+                <span className='font-semibold'>Region:</span> {region}
+              </p>
+              <p className='text-lg mb-2'>
+                <span className='font-semibold'>Sub Region:</span> {subregion}
+              </p>
+              {capital && capital[0] && (
+                <p className='text-lg mb-14'>
+                  <span className='font-semibold'>Capital:</span> {capital[0]}
+                </p>
+              )}
+            </div>
+            <div>
+              <p className='text-lg mb-2'>
+                <span className='font-semibold'>Top Level Domain:</span> {tld}
+              </p>
+              <p className='text-lg mb-2'>
+                <span className='font-semibold'>Currencies:</span> {currencies}
+              </p>
+              <p className='text-lg mb-14'>
+                <span className='font-semibold'>Languages:</span> {languages}
+              </p>
+            </div>
+            {borders && (
+              <div className='lg:col-span-full lg:flex lg:items-start'>
+                <p className='text-2xl font-semibold mb-6 lg:mr-6 lg:text-lg lg:mt-2'>Border Countries:</p>
+                <div className={`grid grid-cols-2 gap-4 auto-cols-auto 
+                                  auto-rows-auto mb-16
+                                `}>
+                  {borders.map((border) => (
+                    <Link
+                      key={
+                        border.tld
+                          ? border.tld[0] + border.name.official
+                          : border.name.official
+                      }
+                      className='rounded-md shadow-md text-center text-lg py-2 px-6 bg-white-text-elements'
+                      to={`/${border.name.common
+                        .replace(/\s+/g, '-')
+                        .toLowerCase()}`}
+                      state={{ country: border }}
+                    >
+                      {border.name.common}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </>
-          )}
+            )}
+          </div>
         </article>
       )}
     </>

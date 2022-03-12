@@ -63,18 +63,18 @@ const Form = () => {
   };
 
   return (
-    <form className='flex flex-col justify-between pt-10 pb-5 md:flex-row'>
-      <div className='flex w-full relative mb-10 md:w-1/3 md:h-full'>
+    <form className='flex flex-col justify-between pt-10 pb-5 lg:flex-row lg:mt-3 lg:pb-3'>
+      <div className='flex w-full relative mb-10 lg:mb-0 lg:w-1/3 lg:h-full bg-white-text-elements drop-shadow-md'>
         <AiOutlineSearch className='text-xl text-dark-gray-input absolute ml-8 left-0 top-1/2 -translate-y-1/2' />
         <input
           onChange={handleInputChange}
           value={country}
-          className='pl-20 py-4 rounded-md min-w-[350px] w-full shadow-md focus:outline-none placeholder:text-dark-gray-input'
+          className='pl-20 py-4 rounded-md min-w-[350px] w-full focus:outline-none placeholder:text-dark-gray-input'
           placeholder='Search for a country...'
           type='text'
         />
       </div>
-      <div className='flex w-[25rem] relative md:w-[15rem] md:h-full'>
+      <div className='flex w-[15rem] max-w-[100%] relative lg:h-full'>
         <select
           value={region}
           onChange={handleSelectChange}
@@ -82,6 +82,7 @@ const Form = () => {
                       focus:outline-none appearance-none bg-down-arrow 
                       bg-no-repeat bg-[center_right_1.5rem] 
                       bg-[length:0.75rem_0.75rem] cursor-pointer
+                      bg-white-text-elements
                       `}
           name='regions'
           id='regions'
