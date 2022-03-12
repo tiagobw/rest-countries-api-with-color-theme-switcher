@@ -78,6 +78,7 @@ const Form = () => {
       </div>
       <div className='flex w-[15rem] max-w-[100%] relative lg:h-full'>
         <select
+          aria-label="Regions"
           value={region}
           onChange={handleSelectChange}
           className={`pl-8 py-4 w-full rounded-md shadow-md 
