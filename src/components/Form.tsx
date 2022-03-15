@@ -1,10 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { AxiosCountriesFetcher } from '../countries/axios/AxiosCountriesFetcher';
 import { useCountriesContext } from '../countries/hooks/useCountriesContext';
 import { Country } from '../countries/model/Country';
 import { CountriesActionTypes } from '../countries/types/countriesTypes';
-import { debounce } from 'lodash';
 import { DataConverter } from '../countries/utils/DataConverter';
 import { useThemeContext } from '../theme/useThemeContext';
 
@@ -13,19 +12,6 @@ const Form = () => {
   const [region, setRegion] = useState('');
   const { dispatch } = useCountriesContext();
   const { darkTheme } = useThemeContext();
-
-  const debouncedFetchAndSetCountry = useRef(
-    debounce(async (countryToFetch: string) => {
-      setCountry('');
-      await fetchCountries(`/name/${countryToFetch}`, 8);
-    }, 600),
-  ).current;
-
-  useEffect(() => {
-    return () => {
-      debouncedFetchAndSetCountry.cancel();
-    };
-  }, [debouncedFetchAndSetCountry]);
 
   const fetchCountries = async (url: string, numberOfCountries: number) => {
     try {
@@ -51,9 +37,8 @@ const Form = () => {
     }
   };
 
-  const handleInputChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCountry(e.target.value);
-    debouncedFetchAndSetCountry(e.target.value);
   };
 
   const handleSelectChange = async (
@@ -64,8 +49,15 @@ const Form = () => {
     await fetchCountries(`/region/${countryToFetch}`, 8);
   };
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await fetchCountries(`/name/${country}`, 8);
+    setCountry('');
+  };
+
   return (
     <form
+      onSubmit={handleSubmit}
       className={`flex flex-col justify-between pt-10 pb-5 
                   lg:flex-row lg:mt-3 lg:pb-3
                 `}
