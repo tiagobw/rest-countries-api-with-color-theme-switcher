@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import './index.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
@@ -8,7 +8,6 @@ import reportWebVitals from './reportWebVitals';
 
 import App from './App';
 import { CountriesProvider } from './countries/context/CountriesContext';
-import CountryPage from './pages/CountryPage';
 import { ThemeProvider } from './theme/ThemeContext';
 
 ReactDOM.render(
@@ -16,10 +15,7 @@ ReactDOM.render(
     <CountriesProvider>
       <ThemeProvider>
         <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<App />} />
-            <Route path=':countryName' element={<CountryPage />} />
-          </Routes>
+          <App />
         </BrowserRouter>
       </ThemeProvider>
     </CountriesProvider>
